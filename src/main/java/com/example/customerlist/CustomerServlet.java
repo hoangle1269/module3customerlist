@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "CustomerServlet", value = "/customers")
+@WebServlet(name = "CustomerServlet", value = "/customerlist")
 public class CustomerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Customer> customers = new ArrayList<>();
@@ -20,7 +20,7 @@ public class CustomerServlet extends HttpServlet {
         customers.add(new Customer("Nguyễn Đình Thi", "1983-08-19", "Hà Nội", "image5.jpg"));
 
         request.setAttribute("customers", customers);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("customerlist.jsp").forward(request, response);
     }
 }
 
